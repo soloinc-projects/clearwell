@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Cistern">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Clearwell">
   <!--
-    The Cistern mark: a water tower holding water to a waved waterline, on a full-bleed safety-orange
+    The Clearwell mark (the app was named Cistern until 2026-10-20): a water tower holding water to a waved waterline, on a full-bleed safety-orange
     tile (brand.md 'Icon'). 24-unit grid; docs/product/assets/generate-assets.py draws every icon from
     these same numbers (ROOF, TANK, WATER, LEGS, RISER) and tokens.json's colours.
       tile  : 0..24 square, linear gradient icon-tile-top #FFA24C to icon-tile-bottom #EE5F17

@@ -3,46 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cistern: The $12.99 one-time, source-cited exam-prep app for entry-level Water Treatment Grade 1 operators.">
-  <meta property="og:title" content="Cistern – Water/Wastewater Operator Exam Prep">
-  <meta property="og:description" content="Source-cited practice questions for Water Treatment Grade 1 certification. One-time purchase, no subscriptions.">
-  <meta property="og:image" content="/og-image.png">
+  <title>Clearwell – Water Treatment Grade 1 exam prep with a source for every answer</title>
+  <meta name="description" content="Clearwell: 172 practice questions for the Water Treatment Grade 1 operator exam, each with an explanation and its public source. Works offline, no account. $12.99 once, no subscription.">
+  <link rel="canonical" href="https://soloinc-projects.github.io/clearwell/">
+  <meta property="og:title" content="Clearwell – Water Treatment Grade 1 exam prep">
+  <meta property="og:description" content="172 practice questions for water treatment operators, each citing the public source behind its answer. Offline, no account, $12.99 once.">
+  <meta property="og:image" content="https://soloinc-projects.github.io/clearwell/og-image.png">
+  <meta property="og:image:alt" content="The Clearwell water-tower icon and name on an orange tile">
+  <meta property="og:url" content="https://soloinc-projects.github.io/clearwell/">
   <meta property="og:type" content="website">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Cistern">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <title>Cistern – Water/Wastewater Operator Exam Prep</title>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-mobile-web-app-title" content="Clearwell">
+  <meta name="theme-color" content="#0B6E8F" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1A20" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Clearwell",
+    "alternateName": "Clearwell - Water License Exam",
+    "description": "Practice questions for the Water Treatment Grade 1 operator certification exam. Each of the 172 questions has an explanation and cites the public source behind its answer. Works offline with no account.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "iOS 26, Android 10",
+    "url": "https://soloinc-projects.github.io/clearwell/",
+    "image": "https://soloinc-projects.github.io/clearwell/icon-512.png",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free download with the first 3 questions of every mode; one $12.99 in-app purchase unlocks all 172."
+    },
+    "publisher": { "@type": "Organization", "name": "8086 LLC" }
+  }
+  </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    @font-face {
+      font-family: 'Archivo';
+      src: url('fonts/Archivo-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
     }
-
-    /* Import fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Inter:wght@400;600&display=swap');
-
-    /* Light mode (default) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --surface: #FFFFFF;
       --surface-muted: #F1F5F7;
       --ink: #15232B;
       --text-secondary: #45565F;
       --accent: #0B6E8F;
+      --accent-foreground: #FFFFFF;
       --border: #C7D3D8;
-      --feedback-correct-bg: #CDEFDA;
-      --feedback-correct-fg: #0B3D23;
-
-      --font-display: 'Archivo', sans-serif;
-      --font-body: 'Inter', sans-serif;
-
-      color-scheme: light;
+      --font-display: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color-scheme: light dark;
     }
-
-    /* Dark mode */
     @media (prefers-color-scheme: dark) {
       :root {
         --surface: #0E1A20;
@@ -50,427 +66,176 @@
         --ink: #ECF2F5;
         --text-secondary: #A9BAC2;
         --accent: #6FD2EF;
+        --accent-foreground: #0E1A20;
         --border: #2E3C44;
-        --feedback-correct-bg: #0F3322;
-        --feedback-correct-fg: #B6EFC9;
-
-        color-scheme: dark;
       }
     }
-
-    body {
-      font-family: var(--font-body);
-      background-color: var(--surface);
-      color: var(--ink);
-      line-height: 1.6;
-      transition: background-color 0.2s, color 0.2s;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      margin-bottom: 1.5rem;
-    }
-
-    h3 {
-      font-size: clamp(1.25rem, 3vw, 1.75rem);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      color: var(--text-secondary);
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-
-    a:hover {
-      opacity: 0.7;
-    }
-
-    /* Skip to main content */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--accent);
-      color: white;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Layout */
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      padding: 1.5rem 1rem;
-      border-bottom: 1px solid var(--border);
-      background-color: var(--surface-muted);
-    }
-
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .logo img {
-      width: 32px;
-      height: 32px;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    nav a {
-      font-size: 0.95rem;
-      color: var(--ink);
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    main {
-      flex: 1;
-    }
-
-    /* Hero section */
-    .hero {
-      padding: 4rem 1rem;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      color: var(--ink);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: var(--text-secondary);
-    }
-
-    /* CTA Button */
-    .cta-container {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-
-    .btn {
-      padding: 1rem 2rem;
-      border-radius: 0.75rem;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background-color: var(--accent);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.85;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background-color: var(--surface-muted);
-      color: var(--ink);
-      border: 1px solid var(--border);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--border);
-    }
-
-    /* Proof points section */
-    .proof-points {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
-      padding: 0 1rem;
-    }
-
-    .proof-point {
-      padding: 2rem;
-      background-color: var(--surface-muted);
-      border-radius: 0.75rem;
-      border-left: 4px solid var(--accent);
-    }
-
-    .proof-point h3 {
-      color: var(--ink);
-      margin-bottom: 0.75rem;
-    }
-
-    .proof-point p {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-bottom: 0;
-    }
-
-    /* Content section */
-    .content-section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    .content-section h2 {
-      color: var(--ink);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: auto;
-      padding: 2rem 1rem;
-      border-top: 1px solid var(--border);
-      background-color: var(--surface-muted);
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .footer-credit {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    /* Accessibility */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        transition: none !important;
-        animation: none !important;
-      }
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 640px) {
-      header {
-        padding: 1rem;
-      }
-
-      .header-content {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      nav {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .hero {
-        padding: 2rem 1rem;
-      }
-
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-
-      .proof-points {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 2rem 0;
-      }
-
-      .cta-container {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-
-    /* Semantic HTML structures */
-    .pricing-note {
-      background-color: var(--feedback-correct-bg);
-      color: var(--feedback-correct-fg);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin: 2rem 0;
-      border-left: 4px solid var(--feedback-correct-fg);
-    }
-
-    .privacy-summary {
-      background-color: var(--surface-muted);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      margin: 1.5rem 0;
-    }
+    body { font-family: var(--font-body); background: var(--surface); color: var(--ink); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; color: var(--ink); }
+    h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin-bottom: 1rem; }
+    h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin-bottom: 1.25rem; }
+    h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1rem; color: var(--text-secondary); }
+    a { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .skip-link { position: absolute; left: 0; top: -48px; background: var(--accent); color: var(--accent-foreground); padding: 12px 16px; z-index: 10; }
+    .skip-link:focus { top: 0; }
+    header { border-bottom: 1px solid var(--border); background: var(--surface-muted); }
+    .bar { max-width: 1100px; margin: 0 auto; padding: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .brand { display: inline-flex; align-items: center; gap: 0.75rem; color: var(--ink); text-decoration: none; font-family: var(--font-display); font-size: 1.35rem; }
+    .brand svg { width: 40px; height: 40px; border-radius: 9px; flex: none; }
+    nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    nav a { color: var(--ink); font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+    main { flex: 1; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+    .hero { padding: 3.5rem 0 2rem; text-align: center; }
+    .hero p.lede { font-size: 1.15rem; max-width: 46rem; margin: 0 auto 1.5rem; }
+    .not-gov { max-width: 46rem; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+    .btn { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 15rem; min-height: 56px; padding: 0.75rem 1.5rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-muted); color: var(--ink); text-decoration: none; font-weight: 600; }
+    .btn small { font-weight: 400; color: var(--text-secondary); }
+    .price { font-size: 1rem; color: var(--ink); }
+    section { padding: 2.5rem 0; }
+    .proofs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .card { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; }
+    .card p { margin: 0; }
+    .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; align-items: start; }
+    figure { margin: 0; }
+    figure img { width: 100%; height: auto; border-radius: 24px; border: 1px solid var(--border); display: block; }
+    .placeholder { aspect-ratio: 9 / 16; border: 2px dashed var(--border); border-radius: 24px; display: flex; align-items: center; justify-content: center; padding: 1.5rem; text-align: center; color: var(--text-secondary); background: var(--surface-muted); }
+    figcaption { margin-top: 0.5rem; text-align: center; color: var(--text-secondary); font-size: 0.95rem; }
+    ul.plain { padding-left: 1.25rem; color: var(--text-secondary); }
+    ul.plain li { margin-bottom: 0.4rem; }
+    ol.sources { padding-left: 1.5rem; color: var(--text-secondary); }
+    ol.sources li { margin-bottom: 0.75rem; overflow-wrap: anywhere; }
+    ol.sources a { font-weight: 400; }
+    .privacy { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.25rem; color: var(--ink); }
+    footer { border-top: 1px solid var(--border); background: var(--surface-muted); padding: 2rem 1rem; text-align: center; margin-top: 2rem; }
+    footer nav { justify-content: center; margin-bottom: 0.75rem; }
+    footer p { font-size: 0.9rem; max-width: 46rem; margin: 0 auto 0.5rem; }
+    @media (prefers-reduced-motion: no-preference) { a, .btn { transition: opacity 0.15s; } a:hover { opacity: 0.8; } }
   </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
+  <a href="#main" class="skip-link">Skip to main content</a>
   <header>
-    <div class="header-content">
-      <a href="/" class="logo">
-        <span>Cistern</span>
+    <div class="bar">
+      <a href="./" class="brand" aria-label="Clearwell home">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFA24C"/><stop offset="1" stop-color="#EE5F17"/></linearGradient>
+            <clipPath id="inner"><path d="M6.75 9 H17.25 V12 a1.5 1.5 0 0 1 -1.5 1.5 H8.25 a1.5 1.5 0 0 1 -1.5 -1.5 Z"/></clipPath>
+          </defs>
+          <rect width="24" height="24" fill="url(#tile)"/>
+          <g fill="#FFFFFF" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12,4 19.25,7.25 4.75,7.25" stroke-width="1"/>
+            <rect x="5" y="6.75" width="14" height="8.5" rx="2.75" stroke="none"/>
+            <line x1="7.75" y1="14.75" x2="6.5" y2="19.75" stroke-width="2"/>
+            <line x1="16.25" y1="14.75" x2="17.5" y2="19.75" stroke-width="2"/>
+            <line x1="12" y1="14.75" x2="12" y2="19.75" stroke-width="2"/>
+          </g>
+          <polygon points="6.75,10 7.62,10.32 8.5,10.45 9.38,10.32 10.25,10 11.12,9.68 12,9.55 12.88,9.68 13.75,10 14.62,10.32 15.5,10.45 16.38,10.32 17.25,10 17.25,13.5 6.75,13.5" fill="#0B6E8F" clip-path="url(#inner)"/>
+        </svg>
+        <span>Clearwell</span>
       </a>
-      <nav aria-label="Main navigation">
-        <a href="/#proof-points">Why Cistern</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/support">Support</a>
-        <a href="/terms">Terms</a>
+      <nav aria-label="Main">
+        <a href="#proof">Why Clearwell</a>
+        <a href="#sources">Sources</a>
+        <a href="privacy/">Privacy</a>
+        <a href="support/">Support</a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="hero">
-      <h1>Cistern: Source-Cited Exam Prep for Water Operators</h1>
-      <p>The $12.99 one-time, source-cited exam-prep app for entry-level Water Treatment Grade 1 operators who want every answer to show its source. 172 original questions, four study modes, offline, no account.</p>
+  <main id="main">
+    <div class="wrap">
+      <section class="hero" aria-labelledby="title">
+        <h1 id="title">Water Treatment Grade 1 exam prep that shows its source</h1>
+        <p class="lede">Clearwell has 172 practice questions for the Water Treatment Grade 1 operator exam. Every answer comes with an explanation and the public source it rests on, so you can check it yourself. It works offline, with no account.</p>
+        <p class="not-gov">Clearwell is not a government app. It is an independent study aid made by 8086 LLC, not affiliated with or endorsed by the EPA, OSHA, any state agency, exam board or licensing agency. Its questions are written from the public sources listed below.</p>
+        <div class="cta">
+          <span class="btn" role="note">App Store<small>Coming soon for iPhone and iPad</small></span>
+          <span class="btn" role="note">Google Play<small>Coming soon for Android</small></span>
+        </div>
+        <p class="price">Free to download, with the first 3 questions of every mode. One $12.99 purchase unlocks all 172. No subscription.</p>
+      </section>
 
-      <div class="cta-container">
-        <span class="btn btn-primary" role="note">Coming soon to the App Store and Google Play</span>
-        <a href="#proof-points" class="btn btn-secondary">Learn More</a>
-      </div>
+      <section id="proof" aria-labelledby="proof-heading">
+        <h2 id="proof-heading">Three things you can check</h2>
+        <div class="proofs">
+          <article class="card">
+            <h3>Every answer cites its source</h3>
+            <p>Open any explanation: the citation, the source's own words and a link to read it at the source are there, for all 172 questions.</p>
+          </article>
+          <article class="card">
+            <h3>One price, once</h3>
+            <p>A single $12.99 one-time unlock, with no subscription. The best-known paid app charges $29.99–$49.99 for 6–12 months of access.</p>
+          </article>
+          <article class="card">
+            <h3>Nothing leaves your phone</h3>
+            <p>No account, no sign-in, no tracking. Your scores, streak and missed questions stay on your device, and the app runs in airplane mode.</p>
+          </article>
+        </div>
+      </section>
 
-      <div class="pricing-note">
-        <strong>One-time purchase, no subscriptions.</strong> Buy once, study whenever you want, completely offline.
-      </div>
-    </section>
+      <section aria-labelledby="shots-heading">
+        <h2 id="shots-heading">See it in the app</h2>
+        <div class="shots">
+          <figure>
+            <div class="placeholder" role="img" aria-label="Screenshot to come: the Home screen">Screenshot to come: Home, with your streak, your average score and the four study modes</div>
+            <figcaption>Four study modes, one $12.99 unlock</figcaption>
+          </figure>
+          <figure>
+            <img src="screenshots/cited-answer.png" width="506" height="783" loading="lazy" alt="A revealed answer marked Correct, with its explanation, the line Source: 40 CFR 141.2, definition of coagulation (EPA), the regulation's own words, and a Read it at the source link.">
+            <figcaption>Every answer shows its public source</figcaption>
+          </figure>
+          <figure>
+            <div class="placeholder" role="img" aria-label="Screenshot to come: the Results screen">Screenshot to come: Results, with your score against the 70% pass mark and every missed question with its source</div>
+            <figcaption>Score, pass mark and streak, on your device</figcaption>
+          </figure>
+        </div>
+      </section>
 
-    <section class="content-section" id="proof-points">
-      <h2>Why choose Cistern?</h2>
-      <div class="proof-points">
-        <article class="proof-point">
-          <h3>One Price, Once</h3>
-          <p>$12.99, one time, no subscription. The best-known paid app charges $29.99–$49.99 for 6–12 months of access. The first three questions in every mode are free.</p>
-        </article>
+      <section aria-labelledby="features-heading">
+        <h2 id="features-heading">Built for water treatment operators</h2>
+        <ul class="plain">
+          <li>172 original questions across 12 topics, from treatment math and disinfection to cross-connections and lead and copper</li>
+          <li>Four study modes: Quick 10, Timed Quiz (20 questions), Past-Errors Review and Full Mock Exam (100 questions, 70% to pass)</li>
+          <li>Nothing is removed: every question you answer stays reachable in All Questions</li>
+          <li>For iPhone and iPad (iOS 26 and later) and Android (Android 10 and later), with dark mode, large text and screen readers</li>
+        </ul>
+        <p class="privacy"><strong>Privacy in one line:</strong> Clearwell collects no data at all; your progress stays on your device. <a href="privacy/">Read the privacy policy</a>.</p>
+      </section>
 
-        <article class="proof-point">
-          <h3>100% Source-Cited</h3>
-          <p>Every question explanation cites its public source (EPA guidance, state study guides). Verify every answer yourself.</p>
-        </article>
-
-        <article class="proof-point">
-          <h3>Modern Design</h3>
-          <p>Built for iOS 26 with Liquid Glass, and for Android with Material 3. Dark Mode, large text and screen readers on both. No stale, flat chrome.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="content-section" aria-labelledby="screens-heading">
-      <h2 id="screens-heading">See it in the app</h2>
-      <div class="screens" style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
-        <figure style="margin:0;max-width:253px;"><img src="screenshots/home.png" width="253" height="450" loading="lazy" alt="Cistern's Home screen: a 2-day streak, an 83% average, and the four study modes Quick 10, Timed Quiz, Past-Errors Review and Full Mock Exam." style="width:100%;height:auto;border-radius:24px;border:1px solid #d0d7de;"><figcaption>Four study modes, one $12.99 unlock</figcaption></figure>
-        <figure style="margin:0;max-width:253px;"><img src="screenshots/cited-answer.png" width="253" height="392" loading="lazy" alt="A revealed answer marked Correct, with its explanation and the line Source: 40 CFR 141.2, definition of coagulation (EPA), quoting the regulation's own words." style="width:100%;height:auto;border-radius:24px;border:1px solid #d0d7de;"><figcaption>Every answer shows its public source</figcaption></figure>
-        <figure style="margin:0;max-width:253px;"><img src="screenshots/results.png" width="253" height="550" loading="lazy" alt="Results: 2 of 3 correct, 67%, against the 70% pass mark, with topic scores and a 2-day streak." style="width:100%;height:auto;border-radius:24px;border:1px solid #d0d7de;"><figcaption>Score, pass mark and streak on device</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2>For Water Operators</h2>
-      <p>Cistern is built for water treatment operators preparing for a Water Treatment Grade 1 state certification exam. Every question shows the public source its answer rests on, so you can check it yourself.</p>
-
-      <h3>Features</h3>
-      <ul style="margin-bottom: 2rem; padding-left: 1.5rem;">
-        <li>172 original, source-cited practice questions</li>
-        <li>Study completely offline—no internet required</li>
-        <li>Four quiz modes: Quick 10, Timed Quiz, Past-Errors Review, Full Mock Exam</li>
-        <li>Track your progress without creating an account</li>
-        <li>Full Dark Mode and accessibility support</li>
-        <li>No ads, no tracking, no data collection</li>
-      </ul>
-
-      <div class="privacy-summary">
-        <strong>Your privacy is built in.</strong> Cistern never collects personal information, never sends data to our servers, and never tracks you. Your quiz scores and progress stay on your device, period.
-      </div>
-    </section>
+      <section id="sources" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sources</h2>
+        <p>Every question cites one of these public sources, and the app links each one.</p>
+        <ol class="sources">
+          <li>Code of Federal Regulations, Title 40, Parts 136–149, revised as of July 1, 2025 (Office of the Federal Register / GPO; rules issued by U.S. EPA) — <a href="https://www.govinfo.gov/bulkdata/CFR/2025/title-40/CFR-2025-title40-vol25.xml">https://www.govinfo.gov/bulkdata/CFR/2025/title-40/CFR-2025-title40-vol25.xml</a></li>
+          <li>Code of Federal Regulations, Title 29, Parts 1900–1910.999, revised as of July 1, 2025 (Office of the Federal Register / GPO; rules issued by OSHA) — <a href="https://www.govinfo.gov/bulkdata/CFR/2025/title-29/CFR-2025-title29-vol5.xml">https://www.govinfo.gov/bulkdata/CFR/2025/title-29/CFR-2025-title29-vol5.xml</a></li>
+          <li>Guidance Manual for Compliance with the Surface Water Treatment Rules: Turbidity Provisions, EPA 815-R-20-004 (U.S. EPA) — <a href="https://www.epa.gov/sites/default/files/2020-06/documents/swtr_turbidity_gm_final_508.pdf">https://www.epa.gov/sites/default/files/2020-06/documents/swtr_turbidity_gm_final_508.pdf</a></li>
+          <li>Disinfection Profiling and Benchmarking Technical Guidance Manual, EPA 815-R-20-003 (U.S. EPA) — <a href="https://www.epa.gov/system/files/documents/2022-02/disprof_bench_3rules_final_508.pdf">https://www.epa.gov/system/files/documents/2022-02/disprof_bench_3rules_final_508.pdf</a></li>
+          <li>Cross-Connection Control Manual, EPA 816-R-03-002 (U.S. EPA) — <a href="https://www.epa.gov/sites/default/files/2015-09/documents/epa816r03002_0.pdf">https://www.epa.gov/sites/default/files/2015-09/documents/epa816r03002_0.pdf</a></li>
+          <li>Formula/Conversion Table for Water Treatment Plant and Water Distribution Systems, September 2026 (Florida Department of Environmental Protection) — <a href="https://floridadep.gov/sites/default/files/DW-DS%20Formula%20Sheet%20September%202026.pdf">https://floridadep.gov/sites/default/files/DW-DS%20Formula%20Sheet%20September%202026.pdf</a></li>
+          <li>Formula/Conversion Table, revised February 24, 2014, the cross-check edition (Florida Department of Environmental Protection) — <a href="https://floridadep.gov/sites/default/files/dw-abcd-formula_0.pdf">https://floridadep.gov/sites/default/files/dw-abcd-formula_0.pdf</a></li>
+          <li>pH and Water, USGS Water Science School (U.S. Geological Survey) — <a href="https://www.usgs.gov/water-science-school/science/ph-and-water">https://www.usgs.gov/water-science-school/science/ph-and-water</a></li>
+          <li>Turbidity and Water, USGS Water Science School (U.S. Geological Survey) — <a href="https://www.usgs.gov/water-science-school/science/turbidity-and-water">https://www.usgs.gov/water-science-school/science/turbidity-and-water</a></li>
+          <li>Hardness of Water, USGS Water Science School (U.S. Geological Survey) — <a href="https://www.usgs.gov/water-science-school/science/hardness-water">https://www.usgs.gov/water-science-school/science/hardness-water</a></li>
+          <li>Drinking Water Operator Certification Exam Study Help (Utah Department of Environmental Quality, Division of Drinking Water) — <a href="https://deq.utah.gov/ddw/study-help">https://deq.utah.gov/ddw/study-help</a></li>
+          <li>Minnesota Rules 9400.1000, Examinations (Minnesota Office of the Revisor of Statutes) — <a href="https://www.revisor.mn.gov/rules/9400.1000/">https://www.revisor.mn.gov/rules/9400.1000/</a></li>
+        </ol>
+        <p>The exam length (100 questions) and pass mark (70%) of the Full Mock Exam come from the Utah and Minnesota sources. Your state sets its own exam: check its own study material too.</p>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/support">Support</a>
-        <a href="/terms">Terms of Service</a>
-      </div>
-      <p class="footer-credit">© 2026 8086 LLC. Cistern is an independent study aid, not affiliated with or endorsed by any exam board or licensing agency.</p>
-    </div>
+    <nav aria-label="Footer">
+      <a href="privacy/">Privacy Policy</a>
+      <a href="support/">Support</a>
+      <a href="terms/">Terms of Service</a>
+    </nav>
+    <p>© 2026 8086 LLC. Clearwell is not a government app and is not affiliated with or endorsed by any government agency, exam board or licensing agency.</p>
   </footer>
 </body>
 </html>
