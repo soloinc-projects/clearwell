@@ -224,24 +224,27 @@
     </ul>
 
     <h2>What Stays On Your Device</h2>
-    <p>The only data Clearwell stores is:</p>
+    <p>Everything Clearwell keeps stays on your device:</p>
     <ul>
       <li><strong>Quiz score history</strong> – Your scores from each quiz you take, stored locally on your device</li>
       <li><strong>Missed and mastered questions</strong> – Which questions you got wrong last time and which you have got right more than once, stored locally, so Past-Errors Review and All Questions work</li>
       <li><strong>Streak state</strong> – How many days in a row you've taken a quiz, stored locally</li>
+      <li><strong>Whether you've bought the unlock</strong> – The App Store or Google Play tells the app; on Android, Clearwell keeps a copy so the full bank opens offline</li>
+      <li><strong>The app's own flags</strong> – For example, whether it has already asked for the age signal and the rating prompt, so it never asks twice</li>
     </ul>
+    <p>On iPhone and iPad, Clearwell also adds its four study modes to Spotlight on your device, so you can search for a mode and start it. Nothing about you or your answers is in that index.</p>
     <p>Clearwell <strong>never transmits</strong> this data. It has no servers, no sync and no copy of your progress, and it shares nothing with anyone. If your iPhone or iPad backs up to iCloud or to a computer, iOS includes this data in that backup, as it does for every app's data. The backup goes to your own Apple Account or computer, and Clearwell cannot read it. On Android, Clearwell opts out of Android's backup and device-to-device transfer, so its data stays on that one device.</p>
 
     <h2>How Purchase Information Is Handled</h2>
-    <p>When you buy Clearwell:</p>
+    <p>When you buy the unlock:</p>
     <ul>
       <li><strong>Apple or Google handles your payment</strong> – On iPhone and iPad, your card, Apple Account and payment details are handled by Apple (StoreKit). On Android, they are handled by Google Play (Google Play Billing). Clearwell never sees your payment information.</li>
  <li><strong>The purchase is checked on your device</strong> – StoreKit or Google Play tells the app on your device that the purchase is valid. Nothing about it is sent to us; we have no server.</li>
-      <li><strong>No recurring charges</strong> – Clearwell is sold as a non-renewing in-app purchase. You pay once. Your payment method is never charged again.</li>
+      <li><strong>No recurring charges</strong> – The unlock is a one-time in-app purchase, not a subscription. You pay once. Your payment method is never charged again.</li>
     </ul>
 
     <h2>App Analytics</h2>
-    <p>Clearwell has no analytics. It writes short diagnostic lines (that a quiz started, that a purchase completed) to your device's own system log, which never leaves the device unless you choose to share diagnostics with Apple or Google in your device's settings. Clearwell itself sends nothing anywhere.</p>
+    <p>Clearwell has no analytics. It writes short diagnostic lines to your device's own system log: that a quiz started, whether an answer was right, that a purchase completed, the age signal's result, and any crash report the system hands the app. They never leave the device unless you choose to share diagnostics with Apple or Google in your device's settings. Clearwell itself sends nothing anywhere.</p>
 
     <h2>Children's Privacy</h2>
     <p>Clearwell is designed for professional adults (water treatment operators) and complies with the Children's Online Privacy Protection Act (COPPA) by not intentionally collecting data from children under 13. If a child's parent or guardian becomes aware that a child has provided Clearwell with personal information, please contact us immediately.</p>
@@ -253,10 +256,16 @@
     <p>Since Clearwell stores no account data, no personal information, and no data linked to your identity, there is no account to delete and no personal data we hold to delete. All data Clearwell knows about is stored on your device only and is deleted when you uninstall the app.</p>
 
     <h2>Offline Operation</h2>
-    <p>Clearwell works entirely offline. You can study on an airplane, in a basement, or anywhere with zero network connectivity. Clearwell itself makes no network calls. The in-app purchase is handled by Apple or Google Play, and a "Read it at the source" link opens the publisher's page in your browser.</p>
+    <p>Clearwell's quizzes work entirely offline. You can study on an airplane, in a basement, or anywhere with zero network connectivity. Clearwell itself makes no network calls. Buying or restoring the unlock, the age signal and the rating prompt go through Apple or Google Play (below), and a "Read it at the source" link opens the publisher's page in your browser.</p>
 
     <h2>Third-Party Services</h2>
-    <p>Clearwell does not use any third-party SDKs or services that collect data. No Firebase, no Mixpanel, no advertising networks. On Android the only Google libraries are Play Billing (the purchase), Play's in-app review prompt and Play's age signal; Clearwell sends them none of your quiz data, and the Android app has no internet permission of its own. Your quiz data never touches a third-party server.</p>
+    <p>Clearwell does not use any third-party SDKs or services that collect data. No Firebase, no Mixpanel, no advertising networks. It uses only the stores' own services:</p>
+    <ul>
+      <li><strong>The purchase</strong> – Apple's StoreKit on iPhone and iPad, Google Play Billing on Android.</li>
+      <li><strong>The age signal</strong> – At first launch, Clearwell asks the store once for your age range, as some U.S. state laws require apps to: Apple's Declared Age Range on iPhone and iPad, Google Play's Age Signals on Android. Nothing in Clearwell is unsuitable for any age, so the answer changes nothing in the app. Clearwell doesn't save it or send it anywhere.</li>
+      <li><strong>The rating prompt</strong> – After you pass a quiz, Clearwell may ask the store, once, to show its rating prompt. The store decides whether it appears. A rating you give goes to the store, not to us.</li>
+    </ul>
+    <p>Clearwell sends these services none of your quiz data, and the Android app has no internet permission of its own. Your quiz data never touches a third-party server.</p>
 
     <h2>Security</h2>
     <p>Your device's OS provides security for locally stored data. iOS and Android encrypt app data at rest. Clearwell does not implement custom encryption because it has no reason to: we don't store sensitive data, and the OS provides encryption by default.</p>
@@ -268,7 +277,7 @@
     <p>If you have any privacy concerns or questions, email us at <a href="mailto:support@8086.llc">support@8086.llc</a>.</p>
 
     <div class="last-updated">
-      Last updated: October 20, 2026
+      Last updated: October 21, 2026
     </div>
   </main>
 
